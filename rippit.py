@@ -60,7 +60,7 @@ for p in range(p_start, p_end):
         type_element = imglist[0][i][1][1]
         type_text = type_element.text.strip()[:5]      
         img_url = img_element.get("src")
-        desc = replaceIllegalChars(desc_element.text).encode('ascii', 'ignore')                       
+        desc = replaceIllegalChars(desc_element.text)[:128].encode('ascii', 'ignore')                       
         img_url = 'http:' + img_url[:-5] + img_url[-4:]
         type = 'gif'
         if(type_text == 'image'):
